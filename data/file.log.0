@@ -1,0 +1,12 @@
+Nov 16, 2021 10:29:17 AM pr2.a04.DateTest main
+WARNING: pr2.a04.IllegalDateException: Illegal Year(year out of scope: 3150) 
+30.11.3150 
+
+Nov 16, 2021 10:29:17 AM pr2.a04.DateTest main
+WARNING: pr2.a04.IllegalDateException: Illegal Day(>31) 
+59.5.2022 
+
+Nov 16, 2021 10:29:17 AM pr2.a04.DateTest main
+WARNING: pr2.a04.IllegalDateException: Illegal Year(year out of scope: 3010) 
+15.12.3010 
+
