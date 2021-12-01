@@ -17,36 +17,35 @@ public class Filez {
 	
 	public static Filez create(File directory) {
 		return new Filez(Arrays.asList(directory.listFiles()));
-
 	}
-	// die Implementierung verwendet keine explizite Schleife!
+	
 	public void printAll(PrintWriter out) {
-	//  list.forEach(out::println);   //Methodenreferenz              BEIDE FUNKTIONIEREN
-		list.forEach(i -> out.println(i));  // Lamdaausdrücke
+		list.forEach(i -> out.println(i));  
 	}
+	
 	// sortiert die Liste mit dem Comparator
 	public Filez sorted(Comparator<File> c) {
 		list.sort(c);     
 		return this;
-
 	}
+	
 	// sortiert die Liste so, dass alle directories am Anfang der Liste sind 
 	public Filez dirsFirst() {    
-		return sorted((first, second) -> Boolean.compare(first.isDirectory(), second.isDirectory()));
-
+		return sorted((i, k) -> Boolean.compare(i.isDirectory(), k.isDirectory()));
 	}
-	// sortiert die Liste so nach Namen Länge sortieren
+	
+	// sortiert die Liste alphabetisch
 	public Filez nameSorted() { 
-		return sorted((first, second) -> first.getName().length() - second.getName().length());
-
+		return sorted((first, second) -> first.getName().compareTo(second.getName()));
 	}
+	
 	// filtert die Liste mit dem predicate
 	public Filez filter(Predicate<File> p) {
 		List<File> filez = new ArrayList<File>(list);
 		filez.removeIf(p);
 		return new Filez(filez);
-		
 	}
+	
 	// filtert die Liste so, daß nur noch Dateien, aber keine Directories mehr enhalten sind
 	public Filez dirsOnly() {
 		return filter(filez -> filez.isDirectory());
@@ -54,7 +53,6 @@ public class Filez {
 	}
 	// filtert die Liste so, daß nur noch Files mit Namen, die kürzer als 9 Zeichen sind, enhalten sind
 	public Filez shortNamesOnly() {
-		return filter(filez -> filez.getName().length() > 9);
-		
+		return filter(filez -> filez.getName().length() > 9);	
 	}
 }
