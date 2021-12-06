@@ -10,11 +10,9 @@ public class SmileyModel {
 	protected boolean smile;
 	protected Point background;
 	
-	public SmileyModel(int head, int eyes, int pupils, boolean smile, Point background) {
-		super();
+	public SmileyModel(int head, int eyes, boolean smile, Point background) {
 		this.head = head;
-		this.eyes = eyes;
-		this.pupils = pupils;
+		this.eyes = eyes ;
 		this.smile = smile;
 		this.background = background;
 	}

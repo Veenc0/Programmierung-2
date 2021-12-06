@@ -15,8 +15,8 @@ public class SmileyTest {
 
 	private static class DrawFrame extends JFrame {
 		public DrawFrame() {
-			Point point = new Point (50, 50);
-			SmileyModel smileyModel = new SmileyModel(300, 10, 5, false, point);
+			Point point = new Point (100, 100);
+			SmileyModel smileyModel = new SmileyModel(400, 30, true, point);
 			setTitle("Smiley Drawing");
 			setLayout(new BorderLayout());
 			add(new SmileyView(smileyModel), BorderLayout.CENTER);
