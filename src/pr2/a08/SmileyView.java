@@ -21,8 +21,7 @@ public class SmileyView extends JPanel{
 		drawEyes(g);
 		drawPupils(g);
 		drawSmile(g);
-//		drawGlasses(g,Color.BLACK, smileyModel.getBackground());
-		drawHat(g); // frewillig zum testen
+		drawHat(g); // frewillig Hut zum testen
 	}
 	
 	protected void drawHead(Graphics g) {
