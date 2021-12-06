@@ -40,7 +40,7 @@ public class SmileyView extends JPanel{
 		int head = smileyModel.getHead();		// Kopfradius 
 		int x = (int) (smileyModel.getBackground().getX() + (int) head - (int) head /3);   // x position von linke Auge
 		int x2 = (int) (smileyModel.getBackground().getX() + (int) head + (int) head /3);  // x position von rechte Auge
-		int y = (int) (smileyModel.getBackground().getY() + (int) head- (int) head /2);		// y position von beide Augen
+		int y = (int) (smileyModel.getBackground().getY() + (int) head- (int) head /2);	   // y position von beide Augen
 		g.fillOval(x - smileyModel.getEyes(), y, eyes, eyes);
 		g.fillOval(x2 - smileyModel.getEyes(), y , eyes, eyes);
 	}
@@ -54,7 +54,6 @@ public class SmileyView extends JPanel{
 		int y = (int) (smileyModel.getBackground().getY() + (int) head - (int) head/2 + (int) smileyModel.getEyes()/3 - (int) smileyModel.getPupils()/3 );
 		g.fillOval(x, y, eyes, eyes);
 		g.fillOval(x2, y, eyes, eyes);
-//		g.fillOval(background.x+148, background.y+90 , eyes, eyes);
 	}
 	
 	protected void drawSmile(Graphics g) {
