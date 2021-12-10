@@ -3,7 +3,6 @@ package pr2.a09;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Point;
@@ -13,7 +12,6 @@ import java.awt.event.KeyEvent;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -28,7 +26,7 @@ public class Mockup {
 	public static void main(String[] args) {
 		DrawFrame frame = new DrawFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800, 600);
+		frame.setSize(1000, 800);
 		frame.setVisible(true);
 	}
 
@@ -39,17 +37,11 @@ public class Mockup {
 			setTitle("Smiley Drawing");
 			setLayout(new BorderLayout());
 			getContentPane().add(new Buttons(), BorderLayout.WEST);
-//			getContentPane().add(new Buttons(), BorderLayout.CENTER);
-//			getContentPane().add(Menubar(), BorderLayout.NORTH);
-//			getContentPane().add(new Toolbar(Color.YELLOW), BorderLayout.SOUTH);
 			getContentPane().add(new SmileyView(smileyModel), BorderLayout.CENTER);
 			getContentPane().add(new Slider(), BorderLayout.EAST);
 			getContentPane().add(Toolbar(), BorderLayout.SOUTH);	
-//		    getContentPane().add(new Menubar(getMenuBar()), BorderLayout.NORTH);
-		    setJMenuBar(Menubar());
-
+		    setJMenuBar(Menubar());	    
 		}
-
 	}
 	
 	public static JMenuBar Menubar() {
@@ -103,78 +95,67 @@ public class Mockup {
 			setBackground(Color.BLUE);
 			JButton button = new JButton();
 			button.setText("SMILE");
-			button.setFont(new Font("Comic Sans", Font.BOLD, 25));
+			button.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			add(button);
 			JButton button2 = new JButton();
 			button2.setText("FRAWN");
-			button2.setFont(new Font("Comic Sans", Font.BOLD, 25));
+			button2.setFont(new Font("Times New Roman", Font.BOLD, 20));
 			add(button2);
-//			add(new JButton("FRAWN"));
-			add(new JButton("ZOOM IN"));
-			add(new JButton("ZOOM OUT"));
-
+			JButton button3 = new JButton();
+			button3.setText("ZOOM IN");
+			button3.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			add(button3);
+			JButton button4 = new JButton();
+			button4.setText("ZOOM OUT");
+			button4.setFont(new Font("Times New Roman", Font.BOLD, 20));
+			add(button4);
 		}
 	}
 	
-//	public static class Menubar extends JPanel {
-//		public Menubar(Color color) {
-//			setPreferredSize(new Dimension(800,50));
-//			setBackground(color);
-//			setLayout(new FlowLayout());
-//			add(new JLabel(""));
-//			add(new JLabel("frawn"));
-//			add(new JLabel("neutral"));		
-//		}	
-//	}
-//	
-//	public static class Toolbar extends JPanel {
-//		public Toolbar(Color color) {
-//			setPreferredSize(new Dimension(800,50));
-//			setBackground(color);
-//			setLayout(new FlowLayout());
-//			add(new JLabel("File"));
-//			add(new JLabel("frawn"));
-//			add(new JLabel("neutral"));		
-//		}	
-//	}
-	
 	public static class Slider extends JPanel {
 		public Slider() {
-		JSlider slider = new JSlider(JSlider.HORIZONTAL, 10, 100, 30);
+		JSlider slider = new JSlider(JSlider.VERTICAL, 10, 100, 30);
+		setLayout(new GridLayout(2,1));
 		slider.setMajorTickSpacing(10);
 		slider.setMinorTickSpacing(20);
 		slider.setPaintTicks(true);
 		slider.setPaintLabels(true);
+		JSlider slider2 = new JSlider(JSlider.VERTICAL, 10, 100, 30);
+		slider2.setMajorTickSpacing(10);
+		slider2.setMinorTickSpacing(20);
+		slider2.setPaintTicks(true);
+		slider2.setPaintLabels(true);
 		add(slider);  
+		add(slider2);
 		
 		}
 	}
-	public static class MenuMy extends JPanel {   //not fucking working
-	 JMenuBar menubar = new JMenuBar();
-
-	  JMenu file = new JMenu("File");
-
-	  public MenuMy() {
-	    file.setMnemonic(KeyEvent.VK_F);
-
-	    JMenuItem fileClose = new JMenuItem("Close");
-	    fileClose.setMnemonic(KeyEvent.VK_C);
-	    fileClose.setToolTipText("Exit application");
-	    fileClose.addActionListener(new ActionListener() {
-	      public void actionPerformed(ActionEvent event) {
-	        System.exit(0);
-	      }
-	    });
-
-	    file.add(fileClose);
-	    menubar.add(file);
-
-	    setSize(800, 50);
-//	    setDefaultCloseOperation(EXIT_ON_CLOSE);
-	    setVisible(true);
-	  }
-	}
-	
+//	public static class MenuMy extends JPanel {
+//	 JMenuBar menubar = new JMenuBar();
+//
+//	  JMenu file = new JMenu("File");
+//
+//	  public MenuMy() {
+//	    file.setMnemonic(KeyEvent.VK_F);
+//
+//	    JMenuItem fileClose = new JMenuItem("Close");
+//	    fileClose.setMnemonic(KeyEvent.VK_C);
+//	    fileClose.setToolTipText("Exit application");
+//	    fileClose.addActionListener(new ActionListener() {
+//	      public void actionPerformed(ActionEvent event) {
+//	        System.exit(0);
+//	      }
+//	    });
+//
+//	    file.add(fileClose);
+//	    menubar.add(file);
+//
+//	    setSize(800, 50);
+////	    setDefaultCloseOperation(EXIT_ON_CLOSE);
+//	    setVisible(true);
+//	  }
+//	}
+//	
 //	public static class Menubar extends JMenu {
 //		public Menubar(Object object) {
 //			JMenuBar menuBar = new JMenuBar();
@@ -205,3 +186,4 @@ public class Mockup {
 //		}
 //	}
 }
+
