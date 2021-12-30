@@ -10,6 +10,7 @@ import pr2.a06.Colors;
 
 public class SmileyView extends JPanel{
 
+	
 	SmileyModel smileyModel;
 	public SmileyView(SmileyModel smileyModel) {
 		this.smileyModel = smileyModel;
@@ -32,8 +33,8 @@ public class SmileyView extends JPanel{
 	
 	protected void drawEyes(Graphics g) {
 		g.setColor(Color.WHITE);
-		int eyes = smileyModel.getEyes() * 2;   // Durchmesser von Augenradius
 		int head = smileyModel.getHead();		// Kopfradius 
+		int eyes = smileyModel.getHead()/3;
 		int x = (int) (smileyModel.getBackground().getX() + head - head /3 - eyes/2);   // x position von linke Auge
 		int x2 = (int) (smileyModel.getBackground().getX() + head + head /3 - eyes/2);  // x position von rechte Auge
 		int y = (int) (smileyModel.getBackground().getY() + head- head /2);	   // y position von beide Augen
@@ -43,14 +44,15 @@ public class SmileyView extends JPanel{
 	
 	protected void drawPupils(Graphics g) {
 		g.setColor(Color.GREEN);
-		int eyes = smileyModel.getEyes()/3; 
+//		int eyes = smileyModel.getHead()/3; 
 		int head = smileyModel.getHead();
-		int pupils = smileyModel.getPupils()/3;
-		int x = (int) (smileyModel.getBackground().getX() + head - head/3 + pupils); // x position von linke pupile
-		int x2= (int) (smileyModel.getBackground().getX() + head + head/3 - eyes );  // x position von rechte pupile
-		int y = (int) (smileyModel.getBackground().getY() + head - head/2 + eyes - pupils); // y position von beide Pupilen
-		g.fillOval(x, y, eyes, eyes);
-		g.fillOval(x2, y, eyes, eyes);
+		int pupils = smileyModel.getHead()/12;
+		int x = (int) (smileyModel.getBackground().getX() + head - head/3 - pupils/2); // x position von linke pupile
+		int x2= (int) (smileyModel.getBackground().getX() + head + head/3  - pupils/2);  // x position von rechte pupile
+		int y = (int) (smileyModel.getBackground().getY() + head - head/2.5); // y position von beide Pupilen
+		
+		g.fillOval(x, y, pupils, pupils);
+		g.fillOval(x2, y, pupils, pupils);
 	}
 	
 	protected void drawSmile(Graphics g) {

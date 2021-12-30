@@ -12,7 +12,7 @@ public class SmileyModel {
 	
 	public SmileyModel(int head, int eyes, boolean smile, Point background) {
 		this.head = head;
-		this.eyes = eyes ;
+		this.eyes = eyes;
 		this.smile = smile;
 		this.background = background;
 	}
